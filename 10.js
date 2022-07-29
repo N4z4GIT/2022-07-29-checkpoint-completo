@@ -10,6 +10,7 @@
 
 function insertAndSort(array, obj) {
   // Tu código acá
+
   
 }
 

@@ -41,6 +41,64 @@ const { BinarySearchTree } = require("./DS");
 
 BinarySearchTree.prototype.insertWord = function (palabra) {
   // Tu código acá
+  BinarySearchTree.prototype.existe = function(palabra){
+    if(palabra.length===this.value.length)
+    {
+      return true;
+    }
+    else if(this.right!==null && palabra.length!==this.value.length)
+    {
+     return this.right.existe(palabra);
+    }
+    if(this.left!==null && palabra.length!==this.value.length)
+    {
+     return this.left.existe(palabra);
+    }
+    return false;
+    }
+    
+    BinarySearchTree.prototype.insertpal = function(palabra){
+      // menores izquierda
+      // mayores derecha
+      if(palabra.length>this.value.length)
+      {
+        // derecha
+        if(this.right===null)
+        {
+          this.right = new BinarySearchTree(palabra)
+        }
+        if(this.right!==null)
+        {
+          this.right.insertpal(palabra)
+        }
+      }
+      if(palabra.length<this.value.length)
+      {
+        // izquierda
+        if(this.left===null)
+        {
+          this.left = new BinarySearchTree(palabra)
+        }
+        if(this.left!==null)
+        {
+          this.left.insertpal(palabra)
+        }
+      }
+      }
+    
+      if(palabra==="")
+      {
+        return false
+      }
+      if(this.existe(palabra))
+      {
+        return false
+      }
+      else
+      {
+        this.insertpal(palabra)
+        return palabra
+      }
 };
 
 //⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

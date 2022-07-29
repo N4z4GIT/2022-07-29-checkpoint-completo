@@ -20,6 +20,17 @@
     
 function countDeep(arr) {
   // Tu código aca:
+  let suma = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+
+    if (Array.isArray(arr[i])) {
+
+      suma += countDeep(arr[i]);
+
+  }
+}
+return arr.length
 
 } 
 // No modifiques nada debajo de esta linea //

@@ -21,6 +21,17 @@ const { Stack } = require("./DS");
 //   ✔️crearStack("RET****ORNA**R*FA*L**SO") => "Stack vacío"
 
 function crearStack(palabra) {
+    var nstack= new Stack()
+    if(palabra===''){
+        return false;
+    }
+    for(let i=0;i<palabra.length;i++){
+        if(palabra[i]=== '*' &&nstack.size()===0)
+            return "Stack vacío"
+        if(palabra[i] === '*' && nstack)nstack.pop();
+        if (palabra[i]!== '*')nstack.push(palabra[i]);
+    }
+    return nstack;
 
 }
 

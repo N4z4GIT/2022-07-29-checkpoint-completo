@@ -13,6 +13,14 @@ const { LinkedList } = require('./DS');
 
 LinkedList.prototype.count = function() {
   // Tu código aca:
+  let current = this.head;
+  let sum = 0;
+ 
+   while(current){ 
+     sum += current.value;
+     current = current.next
+   }
+   return sum;
 
 }
 

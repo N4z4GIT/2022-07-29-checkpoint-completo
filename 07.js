@@ -19,6 +19,21 @@
 
 var restArray = function(array){
     // Tu código acá
+    let cont=0, cont2=0;
+for(let i = 0; i<array.length; i++)
+{
+
+  if(Array.isArray(array[i]))
+  {
+    cont2++
+    cont = cont + restArray(array[i])
+  }
+  else
+  {
+    cont= cont + array[i]
+  }
+}
+  return cont-cont2;
 
 }
 
